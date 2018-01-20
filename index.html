@@ -16,7 +16,7 @@ background: url('noise6.png');
 h2.header {
   border: 2px solid black;
   border-radius: 9px;
-  width: 200px;
+  width: 300px;
   background-color: lightgreen;
   margin: 25px;
   padding: 5px;
@@ -28,29 +28,27 @@ h2.header {
   margin-top: 5px;
 }
 
-.box{
-  width: 600px;
-  height: 250px;
-  padding: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
+#box{
+height: 500px;
+width: 500px;
+margin-left: auto;
+margin-right: auto;
 }
 
 #left{
 	width: 210px;
 	height: 210px;
-	float: left;
 	margin-top: 25px;
-
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #right{
 	width: 210px;
 	height: 210px;
-	float: left;
 	margin-top: 25px;
-
+  margin-left: auto;
+  margin-right: auto;
 }
 #loading{
   width: 200px;
@@ -64,7 +62,6 @@ h2.header {
   height: 200px;
   border-radius: 50%;
   border: 2px solid black;
-  position: relative;
   margin-bottom: 5px;
 
  }
@@ -72,20 +69,24 @@ h2.header {
 #maprighttext{
   width: 350px;
   height: 75px;
-  position: relative;
-  float: center;
   text-shadow: 2px 2px 5px cornsilk;
   font: Ubuntu;
   font-weight: bold;
   font-size: 30px;
-  text-align:center
+  border-width: 2px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
 }
 
 #maprightbottom{
 font-size: 12px;
 width: 350px;
 height: 125px;
-text-align:center
+margin-left: auto;
+margin-right: auto;
+text-align: center;
 }
 
 p.border1 {
@@ -131,20 +132,14 @@ p.border1 {
 <body>
 
 
-<h2 class="header">findmyzip.com</h2>
+<h2 class="header">zipfinder</h2>
 
-<div class="box">
-  <div id="left">
-  	<div id="loading"></div>
-  	<div id="map"></div>
-  </div>
-  <div id="right">
-  	<div id="maprighttext">Finding your location... hold tight!</div>
-  	<div id="maprightbottom"></div>
-  </div>
+<div id="left">
+  <div id="loading"></div>
+  <div id="map"></div>
 </div>
-
-
+  <div id="maprighttext">Finding your location... hold tight!</div>
+  <div id="maprightbottom"></div>
 <script>
   $( "#map" ).hide();
   // Note: This example requires that you consent to location sharing when
