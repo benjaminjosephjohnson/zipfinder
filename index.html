@@ -28,14 +28,7 @@ h2.header {
   margin-top: 5px;
 }
 
-#box{
-height: 500px;
-width: 500px;
-margin-left: auto;
-margin-right: auto;
-}
-
-#left{
+#mapcontainer{
 	width: 210px;
 	height: 210px;
 	margin-top: 25px;
@@ -43,13 +36,6 @@ margin-right: auto;
   margin-right: auto;
 }
 
-#right{
-	width: 210px;
-	height: 210px;
-	margin-top: 25px;
-  margin-left: auto;
-  margin-right: auto;
-}
 #loading{
   width: 200px;
   height: 200px;
@@ -57,16 +43,16 @@ margin-right: auto;
   position: absolute;
   margin-bottom: 5px;
 }
+
 #map{
   width: 200px;
   height: 200px;
   border-radius: 50%;
   border: 2px solid black;
   margin-bottom: 5px;
-
  }
 
-#maprighttext{
+#maptext{
   width: 350px;
   height: 75px;
   text-shadow: 2px 2px 5px cornsilk;
@@ -80,21 +66,22 @@ margin-right: auto;
 
 }
 
-#maprightbottom{
+#maptextbottom{
 font-size: 12px;
 width: 350px;
-height: 125px;
+height: 50px;
 margin-left: auto;
 margin-right: auto;
 text-align: center;
+font-weight: lighter;
 }
 
 p.border1 {
     border: 2px solid black;
     border-radius: 9px;
-    width: 200px;
+    width: 155px;
+    height: 25px;
     background-color: lightblue;
-    margin: 25px;
     padding: 5px;
     margin-left: auto;
     margin-right: auto;
@@ -105,26 +92,40 @@ p.border1 {
 	margin-left: auto;
 	margin-right: auto;
 	border: 2px solid black;
-	border-radius: 9px;
-	width: 650px;
-	height: 200px;
+	border-radius: 17px;
+	width: 400px;
+	height: 150px;
 	padding: 15px;
 	background: rgba(0, 0, 0, 0.1);
-}
-
-#profile {
-	float: left;
-	width: 365px;
-	height: 145px;
 }
 
 #profileText {
 	float: left;
 	width: 260px;
-	height: 200px;
+	height: 100px;
 	margin-left: 25px;
+  font-size: 75%;
 }
 
+#imagecontainer{
+  height: 100px;
+  width: 100px;
+  float: left;
+  display: block;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  background-image: url(profile_image.png);
+  background-position:50% 50%;
+  background-repeat:no-repeat;  
+}
+
+#linkedinlink{
+  width: 300px;
+  margin-top: 15px;
+  float: left;
+  font-size: 75%;
+
+}
 
 </style>
 </head>
@@ -132,17 +133,17 @@ p.border1 {
 <body>
 
 
-<h2 class="header">zipfinder</h2>
+<h2 class="header">zipfinder.mygisproject.com</h2>
 
-<div id="left">
+<div id="mapcontainer">
   <div id="loading"></div>
   <div id="map"></div>
 </div>
-  <div id="maprighttext">Finding your location... hold tight!</div>
-  <div id="maprightbottom"></div>
+  <div id="maptext">Finding your location... hold tight!</div>
+  <div id="maptextbottom"></div>
 <script>
   $( "#map" ).hide();
-  // Note: This example requires that you consent to location sharing when
+  // Note from GMAPS API: This example requires that you consent to location sharing when
   // prompted by your browser. If you see the error "The Geolocation service
   // failed.", it means you probably did not give permission for the browser to
   // locate you.
@@ -172,8 +173,8 @@ p.border1 {
                 		address= res[0].formatted_address;
                         zip = res[0].formatted_address.match(/,\s\w{2}\s(\d{5})/);
                         infoWindow.setContent("ZIP: " + zip[1]);
-                        document.getElementById("maprighttext").innerHTML = "Your Zip Code is:<br>" + zip[1]
-                        document.getElementById("maprightbottom").innerHTML = "Your address is somewhere near: <br>" + address
+                        document.getElementById("maptext").innerHTML = "Your Zip Code is:<br>" + zip[1]
+                        document.getElementById("maptextbottom").innerHTML = "Your address is somewhere near: <br>" + address
                         $("#loading").hide();
                         $("#map").show();
                         google.maps.event.trigger(map, 'resize')
@@ -205,12 +206,12 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWmg8I9LTaASfWNLYXYwSQx3O
 <p class="border1">A simple GIS web app</p>
 
 <div id="profileContainer">
-	<div id="profile">
-		<script src="https://platform.linkedin.com/in.js" type="text/javascript"></script>
-		<script type="IN/MemberProfile" data-id="https://www.linkedin.com/in/benjamin-joseph-johnson" data-format="inline" data-related="false">
-		</script>
-	</div>
-	<div id="profileText">Greetings!<br>This site is a small demo I made for display purposes, if you like it tell me what you think!</div>
+  <div id="imagecontainer"></div>
+	<div id="profileText">Greetings!<br>This site is a small demo I made for display and learning purposes, hope you like it.<br><br>Made using Google Map's Javascript API for the map and geolocation. Hosting done with AWS S3. </div>
+  <div id="linkedinlink">
+    Check me out at linkedin.<br>
+    <a href="https://www.linkedin.com/in/benjamin-joseph-johnson/">https://www.linkedin.com/in/benjamin-joseph-johnson</a>
+  </div>
 </div>
 
 
