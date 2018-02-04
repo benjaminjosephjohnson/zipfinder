@@ -6,7 +6,7 @@
     <meta name = "description" content = "what is my zip code">
     <meta name = "keywords" content = "zipcode, zip, code, geolocation">
     <meta name = "author" content = "Benjamin Johnson">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name = "viewport" content = "width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style>
 body {
@@ -16,7 +16,7 @@ background: url('noise6.png');
 h2.header {
   border: 2px solid black;
   border-radius: 9px;
-  width: 300px;
+  width: 20%;
   background-color: lightgreen;
   margin: 25px;
   padding: 5px;
@@ -26,6 +26,7 @@ h2.header {
   opacity: 0.8;
   margin-bottom: 15px;
   margin-top: 5px;
+  display: table;
 }
 
 #mapcontainer{
@@ -76,17 +77,20 @@ text-align: center;
 font-weight: lighter;
 }
 
-p.border1 {
+h2.border1 {
     border: 2px solid black;
     border-radius: 9px;
-    width: 155px;
-    height: 25px;
+    width: 17%;
     background-color: lightblue;
     padding: 5px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     opacity: 0.8;
+    display: table;
+    font-size: 75%;
+    min-width: 90px;
+
 }
 #profileContainer {
 	margin-left: auto;
@@ -203,13 +207,13 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWmg8I9LTaASfWNLYXYwSQx3O
 &callback=initMap">
 </script>
 
-<p class="border1">A simple GIS web app</p>
+<h2 class="border1">A Simple GIS Web App</h2>
 
 <div id="profileContainer">
   <div id="imagecontainer"></div>
 	<div id="profileText">Greetings!<br>This site is a small demo I made for display and learning purposes, hope you like it.<br><br>Made using Google Map's Javascript API for the map and geolocation. Hosting done with AWS S3. </div>
   <div id="linkedinlink">
-    Check me out at linkedin.<br>
+    Check me out at linkedin: 
     <a href="https://www.linkedin.com/in/benjamin-joseph-johnson/">https://www.linkedin.com/in/benjamin-joseph-johnson</a>
   </div>
 </div>
